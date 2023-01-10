@@ -40,9 +40,10 @@ PRODUCTION = os.getenv("DATABASE_URL") is not None
 # set this to True.
 DEBUG = not PRODUCTION
 
-HEROKU_APP_NAME = os.getenv("HEROKU_APP_NAME", "")
+# HEROKU_APP_NAME = os.getenv("HEROKU_APP_NAME", "")
 
-ALLOWED_HOSTS = [f"{HEROKU_APP_NAME}.herokuapp.com"]
+# ALLOWED_HOSTS = [f"{HEROKU_APP_NAME}.herokuapp.com"]
+ALLOWED_HOSTS = ['*']
 
 if not PRODUCTION:
     ALLOWED_HOSTS += [".localhost", "127.0.0.1", "[::1]"]
