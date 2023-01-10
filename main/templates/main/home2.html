@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block meta %}
+<title>Bootstrap demo</title>
+{% endblock meta %}
+
+
+{% block content %}
+  <div class="container text-center" style="margin-top: 5vh;  max-width: 40vw;">
+      <p class="h3 text-center">CREDIT SCORING</p>
+      <form class="was-validated" novalidate>
+        <div>
+          <div>
+            <label for="Name" class="form-label">Nomor Induk Kependudukan</label>
+          </div>
+          <div>
+            <input type="number" class="form-control" min = "1000000000000000" max="9999999999999999" id="Name" placeholder="NIK should be 16 digit number... " aria-label="NIK" aria-describedby="basic-addon1" required>
+          </div>
+                <br>
+                <div>
+                    <a href="/">Sign in with NIK</a>
+                  </div>
+                <a href="/scoring"  class="btn btn-primary">Submit</a>
+        </div>
+      </form>
+  </div>
+{% endblock content %}
+  

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block meta %}
+<title>Bootstrap demo</title>
+{% endblock meta %}
+
+
+{% block content %}
+  <div class="container text-center" style="margin-top: 5vh;  max-width: 40vw;">
+      <p class="h3 text-center">CREDIT SCORING</p>
+      <form class="was-validated" novalidate>
+        <div>
+          <div>
+            <label for="Name" class="form-label">Name</label>
+          </div>
+          <div>
+            <input type="text" class="form-control" pattern="[a-z]{1,100}" id="Name" placeholder="Write your name here...">
+          </div>
+                <br>
+                <div>
+                    <label for="birthday" class="form-label">Date of Birth</label>
+                    <br>
+                    <input type="date" style="width: 38vw;" id="birthday" name="birthday" required>
+                </div>
+                <br>
+                <br>
+                <div>
+                    <a href="/home2">Sign in with NIK</a>
+                  </div>
+                <a href="/scoring"  class="btn btn-primary">Submit</a>
+        </div>
+      </form>
+  </div>
+{% endblock content %}
+  
