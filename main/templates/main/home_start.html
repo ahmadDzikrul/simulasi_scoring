@@ -1,11 +1,9 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Bootstrap demo</title>
-        <link rel="stylesheet" href="{% static 'css/styles_2.css' %}">
-    </head>
-      <body class="body_style">
+{% extends 'base.html' %}
+{% load static %}
+{% block meta %}
+<title>Bootstrap demo</title>
+{% endblock meta %}
+  {% block content %}
         <div class="grid-container">
           <div class="grid-item item1">
             <nav class="background_header_style">
@@ -56,5 +54,4 @@
             </div>
           </div>
         </div>
-      </body>
-</html>
+  {% endblock content %}
