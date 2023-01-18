@@ -3,55 +3,40 @@
 {% block meta %}
 <title>Bootstrap demo</title>
 {% endblock meta %}
-  {% block content %}
-        <div class="grid-container">
-          <div class="grid-item item1">
-            <nav class="background_header_style">
-              <ul>
-                <li class="li_left"><a href="#home">Home</a></li>
-                <li class="li_right"><a href="#news">News</a></li>
-                <li class="li_right"><a href="#contact">Contact</a></li>
-                <li class="li_right"><a href="#about">About</a></li>
-              </ul>
-            </nav>
+
+
+{% block content %}
+  <div class="container text-center" style="margin-top: 5vh;  max-width: 40vw;">
+      <p class="h3 text-center">CREDIT SCORING</p>
+      <form class="was-validated" novalidate>
+        <div>
+          <div>
+            <label for="Name" class="form-label">Name</label>
           </div>
-          <div class="grid-item item2 div_image">
-            <h1 class="text_image header_image">POP IT!</h1>
-            <p class="text_image p_popit">a fidget toy where users repeatedly pop dimples in and out!</p>
-            <a href = "#buy" class="text_image button_popit">Grab it!</a>
-            <a><img class="image_style" src="{% static 'img/background.png' %}" alt="logo.png"></a>
+          <div>
+            <input id ="name" type="text" class="form-control" id="Name" placeholder="Write your name here...">
           </div>
-          <div class="grid-item item3 white_background">
-            <h3 class="h3_style2">what is pop it?</h3>
-            <p class="p_definition">A Pop-It (also known as Go Pop and Last One Lost) is a fidget toy consisting of a usually-brightly colored silicone tray with pokable bubbles, similar to bubble wrap, that can be flipped and re-used. They come in a variety of colors, shapes, and sizes, and even come in wearable formats.</p>
-          </div>
-          <div class="grid-item item8 blue_background">
-            <h3 class="h3_style2">Choose your pop it</h3>
-          </div>
-          <div class="grid-item item4 blue_background">
-            <a><img class="image_style2" src="{% static 'img/square.png' %}" alt="square.png"></a>
-            <p class="p_content p-pad">square pop it</p>
-            <a href = "#buysquare" class="button_popit2">Buy this!</a>
-          </div>
-          <div class="grid-item item5 blue_background">
-            <a><img class="image_style2" src="{% static 'img/amongus.png' %}" alt="amongus.png"></a>
-            <p class="p_content p-pad">amongus pop it</p>
-            <a href = "#buyamongus" class="button_popit2">Buy this!</a>
-          </div>
-          <div class="grid-item item6 blue_background">
-            <a><img class="image_style2" src="{% static 'img/round.png' %}" alt="round.png"></a>
-            <p class="p_content p-pad">round pop it</p>
-            <a href = "#buyround" class="button_popit2">Buy this!</a>
-          </div>
-          <div class="grid-item item7 div_image">
-            <a><img class="image_style" src="{% static 'img/bg-grid.png' %}" alt="bg-grid.png"></a>
-            <div class="div_image2">
-              <a><img class="image_style3" src="{% static 'img/photo.jpg' %}" alt="photo.jpg"></a>
-            </div>
-            <div class="div_image3">
-              <h1 class="text_image2">SQUARE POP IT!</h1>
-              <p class="p_definition2">We are delighted to offer our new square pop it, a highquality silicone popper fidget toy for our customers to help them relief from stress. Easy to Use: Just press the bubbles down with your fingers and enjoy the pleasant and relaxing popping sound of bubble popping sensory toy, once finished with one side of the pop it, flip the side and start again! These pop it toy gadgets can be pressed over and over again.</p>
-            </div>
-          </div>
+                <br>
+                <div>
+                    <label for="birthday" class="form-label">Date of Birth</label>
+                    <br>
+                    <input id="dob" type="date" style="width: 38vw;" id="birthday" name="birthday" required>
+                </div>
+                <br>
+                <br>
+                <div>
+                    <a href="/home2">Search using NIK</a>
+                  </div>
+                <a onclick="getInputValue();"  class="btn btn-primary">Submit</a>
         </div>
-  {% endblock content %}
+      </form>
+  </div>
+  <script>
+    function getInputValue() {
+      let inputname = document.getElementById("name").value;
+      let dob = document.getElementById("dob").value;
+      window.location.href = "/scoring/"+inputname+";"+dob+"/"
+    }
+  </script>
+{% endblock content %}
+  
